@@ -1,0 +1,109 @@
+{
+    "strict": {
+        "text-font-family": "Inter-Regular",
+
+        "text-heading-1-font-size": 24,
+        "text-heading-1-font-weight": "800",
+        "text-heading-1-font-family": "Inter-Bold",
+
+        "text-heading-2-font-size": 20,
+        "text-heading-2-font-weight": "600",
+        "text-heading-2-font-family": "Inter-SemiBold",
+
+        "text-heading-3-font-size": 18,
+        "text-heading-3-font-weight": "800",
+        "text-heading-3-font-family": "Inter-Bold",
+
+        "text-caption-1-font-size": 18,
+        "text-caption-1-font-weight": "300",
+        "text-caption-1-font-family": "Inter-Regular",
+
+        "text-caption-2-font-size": 14,
+        "text-caption-2-font-weight": "400",
+        "text-caption-2-font-family": "Inter-Regular",
+
+        "text-subtitle-1-font-size": 14,
+        "text-subtitle-1-font-weight": "400",
+        "text-subtitle-1-font-family": "Inter-Bold",
+
+        "text-subtitle-2-font-size": 12,
+        "text-subtitle-2-font-weight": "300",
+        "text-subtitle-2-font-family": "Inter-Medium",
+
+        "text-label-font-size": 16,
+        "text-label-font-weight": "700",
+        "text-label-font-family": "Inter-SemiBold"
+
+    },
+    
+    
+    "components": {
+		"Button": {
+            "meta": {
+                "variantGroups": {
+                    "status": {
+                        "secondary": {
+                            "default": false
+                        }
+                    }
+                }
+            },
+			"appearances": {
+				"filled": {
+					"variantGroups": {
+						"status": {
+                            "primary": {
+                                "backgroundColor": "background-basic-color-3",
+                                "textColor": "text-basic-color",
+                                "borderColor": "transparent",
+                                "borderWidth": 0,
+
+                                "state": {
+                                    "focused": {
+                                        "backgroundColor": "rgba(232, 244, 255, 0.2)",
+                                        "borderColor": "transparent",
+                                        "borderWidth": 0
+                                    },
+                                    "active": {
+                                        "backgroundColor": "rgba(232, 244, 255, 0.2)",
+                                        "borderColor": "transparent",
+                                        "borderWidth": 0
+                                    },
+                                    "disabled": {
+                                        "backgroundColor": "color-primary-200",
+                                        "borderColor": "transparent",
+                                        "borderWidth": 0
+                                    }
+                                }
+                            },
+							"secondary": {
+								"backgroundColor": "color-primary-500",
+								"textColor": "text-basic-color",
+                                "borderColor": "transparent",
+                                "borderWidth": 0,
+
+                                "state": {
+                                    "focused": {
+                                        "backgroundColor": "color-primary-100",
+                                        "borderColor": "transparent",
+                                        "borderWidth": 0
+                                    },
+                                    "active": {
+                                        "backgroundColor": "color-primary-100",
+                                        "borderColor": "transparent",
+                                        "borderWidth": 0
+                                    },
+                                    "disabled": {
+                                        "backgroundColor": "color-primary-200",
+                                        "textColor": "text-basic-color"
+                                    }
+                                }
+							}
+						}
+					}
+				}
+			}
+		}
+          
+	}
+}
