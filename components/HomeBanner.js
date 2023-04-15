@@ -6,7 +6,7 @@ const HomeBanner = () => {
   return (
     <Image
         source={require('../assets/Images/homeBanner.png')}
-        style={{width: 100, height: 100}}
+        style={{width: '94%', height: '22%', alignSelf: 'center', marginVertical: 4, borderRadius: 8}}
     />
   )
 }

@@ -42,7 +42,7 @@ const Reset = () => {
                 size='large' 
                 style={[
                     styles.primaryButton, 
-                    verificationEmail==="" && { backgroundColor: theme['color-primary-100'] }
+                    verificationEmail==="" ? { backgroundColor: theme['color-primary-100'] } : { backgroundColor: theme['color-primary-500'] }
                 ]}
                 onPress={()=> {console.log(credentials); navigation.navigate("Home");}}
             > 

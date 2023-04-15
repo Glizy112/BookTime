@@ -62,6 +62,14 @@ export const BottomNavigator = () => {
     //homeIconRef.current.startAnimation;
   },[]);
 
+  useEffect(()=> {
+    const unsubscribe = navigation.addListener("focus", ()=> {
+      console.log(navigation.getState());
+      setSelectedIndex(0);
+    });
+    return()=> unsubscribe();
+  },[]);
+
   const [selectedIndex, setSelectedIndex] = useState(0);
   //const [selectedIcon, setSelectedIcon] = useState({idx: 0, isSelected: false});
   
@@ -76,7 +84,8 @@ export const BottomNavigator = () => {
         <BottomNavigationTab icon={<HomeIcon fill={selectedIndex===0 ? theme['background-basic-color-4'] : '#8F9BB3'} onPress={()=> { setSelectedIndex(0); navigation.navigate("Home"); }}/>}/>
       {/* </Pressable> */}
       {/* <Pressable style={{alignItems: 'center', justifyContent: 'center'}} > */}
-        <BottomNavigationTab icon={<FavIcon fill={selectedIndex===1 ? theme['background-basic-color-4'] : '#8F9BB3'} onPress={()=> { setSelectedIndex(1); navigation.navigate("Favorites"); }}/>}/>
+      {/* For now, navigate to Detail for dev. */}
+        <BottomNavigationTab icon={<FavIcon fill={selectedIndex===1 ? theme['background-basic-color-4'] : '#8F9BB3'} onPress={()=> { setSelectedIndex(1); navigation.navigate("ItemDetail"); }}/>}/> 
       {/* </Pressable> */}
       {/* <Pressable style={{alignItems: 'center', justifyContent: 'center'}} > */}
         <BottomNavigationTab icon={<SearchIcon fill={selectedIndex===2 ? theme['background-basic-color-4'] : '#8F9BB3'} onPress={()=> { setSelectedIndex(2); navigation.navigate("Search"); }}/>}/>

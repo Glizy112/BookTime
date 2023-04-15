@@ -3,35 +3,30 @@
         "text-font-family": "Inter-Regular",
 
         "text-heading-1-font-size": 24,
-        "text-heading-1-font-weight": "800",
         "text-heading-1-font-family": "Inter-Bold",
 
         "text-heading-2-font-size": 20,
-        "text-heading-2-font-weight": "600",
         "text-heading-2-font-family": "Inter-SemiBold",
 
         "text-heading-3-font-size": 18,
-        "text-heading-3-font-weight": "800",
         "text-heading-3-font-family": "Inter-Bold",
 
+        "text-heading-4-font-size": 16,
+        "text-heading-4-font-family": "Inter-Bold",
+
         "text-caption-1-font-size": 18,
-        "text-caption-1-font-weight": "300",
         "text-caption-1-font-family": "Inter-Regular",
 
         "text-caption-2-font-size": 14,
-        "text-caption-2-font-weight": "400",
         "text-caption-2-font-family": "Inter-Regular",
 
         "text-subtitle-1-font-size": 14,
-        "text-subtitle-1-font-weight": "400",
         "text-subtitle-1-font-family": "Inter-Bold",
 
         "text-subtitle-2-font-size": 12,
-        "text-subtitle-2-font-weight": "300",
         "text-subtitle-2-font-family": "Inter-Medium",
 
         "text-label-font-size": 16,
-        "text-label-font-weight": "700",
         "text-label-font-family": "Inter-SemiBold"
 
     },
@@ -103,7 +98,38 @@
 					}
 				}
 			}
-		}
+		},
+        "Datepicker": {
+            "appearances": {
+              "default": {
+                "variantGroups": {
+                  "status": {
+                    "basic": {
+                      "textColor": "text-basic-color",
+                      "backgroundColor": "background-basic-color-2",
+                      "borderWidth": 0,
+                      "borderColor": "transparent",
+                      "borderRadius": 6,
+                      
+                      "state": {
+                        "focused": {
+                            "backgroundColor": "background-basic-color-3",
+                            "borderColor": "background-basic-color-4",
+                            "borderWidth": 1
+                        },
+                        "active": {
+                            "backgroundColor": "background-basic-color-3",
+                            "borderColor": "background-basic-color-4",
+                            "borderWidth": 1
+                        }
+                        
+                    }
+                    }
+                  }
+                }
+              }
+            }
+          }
           
 	}
 }

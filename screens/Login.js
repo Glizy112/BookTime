@@ -1,4 +1,4 @@
-import { StyleSheet, Dimensions } from 'react-native'
+import { StyleSheet, Dimensions, ToastAndroid } from 'react-native'
 import React, { useState } from 'react'
 import {
     Button,
@@ -32,14 +32,16 @@ export const InputComponent =(props)=> {
   );
 
   return (
-      <Input  
+      <Input
+        size={props?.inpSize}
+        disabled={props.isCurrentlyEnabled===false ? true : false}  
         accessoryLeft={props.iconName!==undefined && <Icon name={props.iconName} fill={"rgba(31, 40, 49, 0.8)"}/>}
-        textStyle={{height: 40}}
+        textStyle={props.inpHeight===undefined ? {height: 46} : {height: props.inpHeight}}
         style={[
           styles.inputField, 
           //inputFocused.inputName===props.inputName && inputFocused.isFocused 
           //? 
-          {backgroundColor: theme['background-basic-color-2'], marginTop: props.topMargin} 
+          {backgroundColor: theme['background-basic-color-2'], marginTop: props?.topMargin, width: props?.inpWidth} 
           // : {backgroundColor: theme['background-basic-color-3']}
         ]}
         value={props.value}
@@ -94,7 +96,7 @@ const Login = () => {
             isError={credentials?.email!=="" && !emailRegex.test(credentials?.email)} 
             placeholder="Email address..." 
             errorText="Invalid email address. Valid example-abc@gmail.com"
-            topMargin={46}
+            topMargin={32}
           />
           <InputComponent
             inputName="password" 
@@ -105,7 +107,7 @@ const Login = () => {
             isError={credentials?.password!=="" && !passRegex.test(credentials?.password)}
             placeholder="Password..." 
             errorText="Must be atleast 8 characters long, must contain atleast 1 uppercase letter, 1 lowercase letter and atleast 2 special symbols-!,@,#."
-            topMargin={46}
+            topMargin={40}
           />
           <Text 
             category='c2' 
@@ -148,6 +150,21 @@ const Login = () => {
           </Text>
         </Layout>
         {/* Login Inputs Section Ends */}
+
+        {/* Social Login Button Section Starts */}
+          <Layout style={{marginTop: 32, alignItems: 'center', justifyContent: 'center', alignSelf: 'center'}}>
+            <Text category="label"> OR </Text>
+            <Layout style={{flexDirection: 'row', alignItems: 'center', marginTop: 24, borderWidth: 0, justifyContent: 'space-between', width: width/2.4}}>
+              <Button style={{borderRadius: 32, width: 64, height: 64}} onPress={()=> ToastAndroid.show("Google Login", ToastAndroid.SHORT)}>
+                <Icon name="google-outline" fill={"#FF4848"} width={24} height={24}/>
+              </Button>
+              <Button style={{borderRadius: 32, width: 64, height: 64}}>
+                <Icon name="facebook-outline" fill={theme["background-basic-color-4"]} width={24} height={24} onPress={()=> ToastAndroid.show("Facebook Login", ToastAndroid.SHORT)}/>
+              </Button>
+            </Layout>
+          </Layout>
+        {/* Social Login Button Section Ends */}
+
       </Layout>
   )
 }
@@ -176,7 +193,7 @@ const styles = StyleSheet.create({
   inputContainer: {
     width: width/1.1,
     marginHorizontal: 16,
-    marginVertical: 64,
+    marginTop: 64,
   },
   inputField: {
     textAlign: 'center',

@@ -32,6 +32,11 @@ import FavoriteScreen from './screens/Favorites';
 import SearchScreen from './screens/Search';
 import ProfileScreen from './screens/Profile';
 import ResetPassScreen from './screens/Reset';
+import DetailScreen from './screens/Detail';
+import RentalScreen from './screens/Rental';
+import CheckoutScreen from './screens/Checkout';
+import OrderDetailScreen from './screens/OrderDetail';
+import PreviousOrderScreen from './screens/PreviousOrders';
 import { TabNavigator } from './components/BottomNavigator';
 
 /**
@@ -60,6 +65,11 @@ export default () => (
           <Stack.Screen name="Login" component={LoginScreen}/>
           <Stack.Screen name="ResetPass" component={ResetPassScreen}/>
           <Stack.Screen name="BottomTabs" component={TabNavigator}/>
+          <Stack.Screen name="ItemDetail" component={DetailScreen}/>
+          <Stack.Screen name="RentItem" component={RentalScreen}/>
+          <Stack.Screen name="CheckoutItem" component={CheckoutScreen}/>
+          <Stack.Screen name="OrderDetails" component={OrderDetailScreen}/>
+          <Stack.Screen name="RecentOrders" component={PreviousOrderScreen}/>
           {/* <Stack.Screen name="Home" component={BottomNavigator}/>
           <Stack.Screen name="Favorites" component={FavoriteScreen}/>
           <Stack.Screen name="Search" component={SearchScreen}/>

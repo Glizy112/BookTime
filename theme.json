@@ -11,7 +11,7 @@
   "color-primary-100": "rgba(255, 192, 156, 0.4)",
   "color-primary-200": "rgba(255, 192, 156, 0.6)",
   "color-primary-500": "#FFC09C",
-  "color-danger-100": "#FF4848",
+  "color-danger-100": "rgba(255, 72, 72, 0.15)",
   "color-danger-500": "#FF4848",
   "color-success-100": "#4DD2BA",
   "color-success-500": "#4DD2BA",

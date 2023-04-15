@@ -18,12 +18,12 @@ const CategoryButton = ({ btnKey, iconName, btnStyle, categoryName, handleButton
       key={btnKey}
       size="tiny"
       style={[styles.container, btnStyle]} 
-      status={selectedId === btnKey ? "secondary" : "primary"}
+      status={selectedId === categoryName ? "secondary" : "primary"}
       accessoryLeft={<CategoryIcon iconName={iconName}/>}
       onPress={handleButtonPress}
     >
         {(props)=> (
-            <Text {...props} style={{paddingRight: 8, fontFamily: 'Inter-Bold'}} category="s2">{categoryName}</Text>
+            <Text {...props} style={[{paddingRight: 8}, selectedId===categoryName && {fontFamily: 'Inter-SemiBold'}]} category="s2">{categoryName}</Text>
         )}
     </Button>
   )
