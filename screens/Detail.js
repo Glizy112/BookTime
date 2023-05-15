@@ -176,7 +176,7 @@ const Detail = () => {
             onPress={()=> console.log("Buy Clicked")}
         >
             {
-                (props)=> (<Text {...props} category="label" style={{fontFamily: 'Inter-SemiBold'}}> Buy </Text>)
+                (props)=> (<Text {...props} category="s1" style={{fontFamily: 'Inter-SemiBold'}}> Buy </Text>)
             }
         </Button>
         <ActionButton

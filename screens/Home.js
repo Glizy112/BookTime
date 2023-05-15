@@ -12,6 +12,7 @@ import HomeBanner from '../components/HomeBanner';
 //import { testItems } from './Checkout';
 import ItemCard from '../components/ItemCard';
 import Profiles, { authors } from '../components/Profiles';
+import { useNavigation } from '@react-navigation/native';
 //import { BottomNavigator } from '../components/BottomNavigator';
 //import { TabNavigator } from '../components/BottomNavigator';
 
@@ -178,6 +179,7 @@ const Home = () => {
   const [ selectedCategory, setSelectedCategory ] = useState('Popular');
   const [ moreStateItems, setMoreStateItems ] = useState(moreItems);
   const [ filteredMoreItems, setFilteredMoreItems ] = useState(false);
+  const navigation = useNavigation();
 
   useEffect(()=> {
     const filteredMoreArray = moreItems.filter(item=> item.tag === selectedCategory);
@@ -217,12 +219,12 @@ const Home = () => {
           }}
         />
       </View>
-      <View style={{ height: 240, borderWidth: 0 }}>
+      <View style={{ height: 248, borderWidth: 0 }}>
         <FlatList
           data={moreStateItems}
           extraData={filteredMoreItems}
           keyExtractor={(item)=> item.id}
-          renderItem={({item})=> (<ItemCard itemKey={item.id} itemName={item.itemName} itemPrice={item.itemPrice}/>)}
+          renderItem={({item})=> (<ItemCard itemKey={item.id} itemName={item.itemName} itemPrice={item.itemPrice} handlePress={()=> navigation.navigate("ItemDetail")}/>)}
           horizontal
           showsHorizontalScrollIndicator={false}
           contentContainerStyle={{
